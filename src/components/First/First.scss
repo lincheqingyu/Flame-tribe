@@ -1,0 +1,81 @@
+.app {
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    flex-direction: column;
+    /* 沿主轴纵向排列 */
+    background-color: rgb(242, 242, 242);
+    align-items: center;
+}
+
+.one {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    justify-content: center;
+    /* margin-top: 2px; */
+}
+
+// 把下划线弄成单独的盒子
+.borderBottom{
+    content: '';
+    position: absolute;
+    top: 145px;
+    width: 100%;
+    /* 设置下划线宽度为盒子宽度的一半 */
+    height: 1px;
+    /* 设置下划线高度 */
+    background-color: rgb(199, 191, 191);
+    /* 下划线颜色 */
+}
+
+
+.ul-one {
+    color: black;
+    position: absolute;
+    margin-left: 8%;
+    justify-content: center;
+    display: flex;
+}
+
+.ul-one li {
+    display: inline-block;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.ul-one a {
+    color: #6F6B6B;
+    padding-right: 70px;
+    display: flex;
+}
+
+.ul-one a:hover {
+    color: #FFAA5E;
+    text-decoration-line: underline;
+    text-underline-offset: 0.8em;
+    transition: all 0.5s;
+}
+
+.borderActive {
+    color: #FFAA5E !important;
+}
+.ul-two li {
+    margin-left: 125%;
+    display: block !important;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    top:10px;
+    font-size: large;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.ul-two {
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+    /* 添加过渡效果 */
+}

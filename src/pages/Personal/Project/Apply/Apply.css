@@ -1,0 +1,42 @@
+.apply-all {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.apply-all form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 28px;
+  color: #6d7071;
+}
+
+.apply-all label {
+  margin-bottom: 5%;
+}
+
+.apply-all input,
+.apply-all .react-datepicker-wrapper {
+  width: 600px;
+  margin-left: 10px;
+}
+
+.react-datepicker__input-container {
+  margin-left: -10px;
+}
+
+.apply-all input[type='submit'] {
+  width: 100px;
+  margin-right: 40%;
+  padding: 1%;
+  background-color: #fda75f;
+  border-color: #fda75f;
+  border-radius: 10px;
+}
+
+.apply-input {
+  width: 728px;
+  display: flex;
+  justify-content: space-between;
+}

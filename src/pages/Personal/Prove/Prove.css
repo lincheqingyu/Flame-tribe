@@ -1,0 +1,63 @@
+.prove-all {
+  width: 80%;
+  min-height: 100vh;
+  display: flex;
+  float: right;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.prove-down {
+  width: 80%;
+}
+
+.prove-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: white;
+}
+.realbox {
+  width: 800px;
+  height: 550px;
+  background-color: #fff7e9;
+  margin: 60px auto;
+  border-radius: 20px;
+}
+.realbox p {
+  font-size: 36px;
+  padding-top: 40px;
+  margin-left: 320px;
+}
+
+.provebox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.provebox input {
+  width: 500px;
+  height: 60px;
+  background-color: white;
+  border: none;
+  padding-left: 10px;
+}
+
+.provebox input,
+.provebox button {
+  margin-bottom: 30px;
+}
+
+.provebox button {
+  width: 100px;
+  height: 50px;
+  background-color: #ff8170;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 26px;
+  letter-spacing: 10px;
+  padding-left: 10px;
+}

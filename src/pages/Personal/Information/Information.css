@@ -1,0 +1,77 @@
+.information-all {
+  width: 80%;
+  min-height: 100vh;
+  display: flex;
+  float: right;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.information-down {
+  width: 80%;
+}
+
+.opt-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-wrap-user {
+  width: 100%;
+
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.page-wrap-user .opt-item {
+  color: #6d7071;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 47px;
+}
+
+.page-wrap-user .opt-item .opt-label {
+  font-family: Microsoft YaHei;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.page-wrap-user .opt-item .opt-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-wrap-user .opt-item .opt-content .opt-value {
+  font-family: Microsoft YaHei;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding-right: 6px;
+}
+
+.page-wrap-user .opt-item .opt-content .opt-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.page-wrap-user .opt-item .opt-content .opt-icon img {
+  height: 24px;
+}
+
+.page-wrap-user .opt-item .opt-content.pad {
+  padding-right: 24px;
+}
+
+.opt-value img {
+  height: 50px;
+}

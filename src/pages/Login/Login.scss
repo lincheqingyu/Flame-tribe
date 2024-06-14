@@ -1,0 +1,161 @@
+.container {
+  display: flex;
+  background-image: url("../../assets/images/注册账号.png");
+  background-size: cover;
+}
+
+.contain {
+  background-image: url('../../assets/images/Rectangle\ 1964.png');
+  background-size: contain;
+  /* 保持图片比例并让其完全显示在盒子中 */
+  background-position: center;
+  /* 居中对齐 */
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  /* 居中 */
+}
+
+.logo {
+  width: 8%;
+  height: auto;
+  margin-top: 9%;
+  margin-left: 40px;
+  position: relative;
+
+  img {
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+.leftPicture {
+  align-items: center;
+  justify-content: space-around;
+  float: left;
+  display: flex;
+  width: 50%;
+  height: auto;
+  margin-left: -12%;
+}
+
+.leftPicture img {
+  min-width: 100%;
+  min-height: 10vh;
+}
+
+.login {
+  width: auto;
+  float: right;
+  height: 100vh;
+  // background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* 垂直排列 */
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: space-around;
+
+
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    align-items: center;
+    /* 垂直居中 */
+    text-align: center;
+    /* 水平居中 */
+
+    .remember-forgot-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      /* 垂直居中 */
+      justify-content: space-between;
+
+      /* 将子元素分散对齐 */
+      .login-form-right {
+        text-align: right;
+
+        /* 文本右对齐 */
+        ul {
+          color: #9F9F9F;
+          font-weight: 800;
+        }
+
+        li {
+          padding: 2px;
+          float: right;
+        }
+      }
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      /* 垂直排列 */
+      align-items: center;
+      /* 垂直居中 */
+      margin-top: 40px;
+
+      .login-form-button {
+        width: 200px;
+        height: 40px;
+      }
+    }
+
+    :where(.css-dev-only-do-not-override-zl9ks2).ant-btn-primary {
+      color: #fff;
+      background: #FF9110;
+      box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+    }
+
+    :where(.css-dev-only-do-not-override-zl9ks2).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+      color: #fff;
+      background: #ffaf54;
+    }
+  }
+}
+
+.minHead {
+  color: #3A1D1D;
+  font-style: italic;
+  font-weight: 1000;
+   padding-left: 0px;
+}
+
+
+.orange {
+  color: #FF9110
+}
+
+.link {
+  font-weight: 1000;
+  font-style: italic;
+
+  .none {
+    color: #3A1D1D
+  }
+}
+
+.borderActive {
+  color: #FF9110
+}
+
+:where(.css-dev-only-do-not-override-zl9ks2).ant-input-affix-wrapper {
+  position: relative;
+  display: inline-flex;
+  width: 360px;
+  min-width: 0px;
+  height: 50px;
+  padding: 4px 11px;
+  font-size: 15px;
+  line-height: 1.5714285714285714;
+  border-radius: 20px;
+  transition: all 0.2s;
+  // border-width: 20px;
+  border: 2px solid #716E6D
+}

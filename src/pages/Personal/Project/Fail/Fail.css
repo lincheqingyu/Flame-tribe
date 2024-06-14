@@ -1,0 +1,41 @@
+.fail-all {
+  width: 100%;
+}
+
+.fail-up {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  background-color: #ffc390;
+  justify-content: space-around;
+}
+
+.fail-up1 {
+  font-size: 24px;
+  margin: 2%;
+  color: white;
+}
+
+.fail-content {
+  width: 100%;
+  height: 50%;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.fail-down {
+  width: 100%;
+  display: flex;
+  background-color: #ffc390;
+  justify-content: flex-end;
+  margin-top: 1%;
+}
+
+.fail-down-main {
+  margin: 2%;
+  padding-right: 5%;
+  color: #717070;
+}

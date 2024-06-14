@@ -1,0 +1,80 @@
+.two{
+    margin-top: 20px;
+}
+.ul-two li {
+    margin-left: 125%;
+    display: block !important;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    top:10px;
+    font-size: large;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.ul-two {
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+    /* 添加过渡效果 */
+}
+.twoTop{
+    width: 75%;
+    height: auto;
+    margin-right: 12.5%;
+    margin-left: 12.5%;
+}
+.recommend{
+    display: inline-block;
+    font-weight: 800;
+}
+.spanMore{
+    margin-left: 80%;
+    font-weight: 400;
+    color: #6F6B6B;
+}
+.wrap{
+    height: 100%;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 20px;
+}
+.wrapLeft {
+    width: 35%; /* 设置容器宽度 */
+    height: 150px; /* 设置容器高度 */
+    border-radius: 20px; /* 设置边框圆角 */
+    overflow: hidden; /* 隐藏溢出部分 */
+    float: left;
+    position: relative; /* 为了相对定位内部图片 */
+  }
+  
+.wrapLeft img {
+    width: 100%; /* 图片宽度充满容器 */
+    height: 100%; /* 图片高度充满容器 */
+    object-fit: cover; /* 保持图片比例并覆盖整个盒子 */
+    border-radius: 20px; /* 设置图片边角与容器一致 */
+    position: absolute; /* 相对于容器定位 */
+    top: 0; /* 图片上边距为0 */
+    left: 0; /* 图片左边距为0 */
+  }
+.wrapRight{
+    float: right;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    padding-top: 25px;
+    padding-left: 50px;
+    font-weight: 550;
+}
+.time{
+    margin-top: 7.5%;
+    padding-left: 52px;
+    color:#6F6B6B
+}
+.auto img{
+    width: 100%;
+}

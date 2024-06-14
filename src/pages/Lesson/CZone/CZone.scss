@@ -1,0 +1,69 @@
+.wrapCzone {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(242, 242, 242);
+    min-height: 100vh; /* 设置最小高度为视口的高度 */
+    // box-sizing: border-box; /* 让 padding 不影响容器的总高度 */
+}
+.Wrap{
+    background-color: rgb(242,242,242);
+    height: 100%;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 20px;
+}
+.inside {
+    display: flex;
+    margin-top: 3.4%;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.insideLeft {
+    width: 45%;
+    height: 225px;
+    border-radius: 20px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.insideLeft img {
+    width: 100%;
+    /* 图片宽度充满容器 */
+    height: 100%;
+    /* 图片高度充满容器 */
+    object-fit: cover;
+    /* 保持图片比例并覆盖整个盒子 */
+    border-radius: 20px;
+    /* 设置图片边角与容器一致 */
+    position: absolute;
+    /* 相对于容器定位 */
+    top: 0;
+    /* 图片上边距为0 */
+    left: 0;
+    /* 图片左边距为0 */
+}
+
+.insideRight {
+    float: right;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleTwo {
+    padding-top: 25px;
+    padding-left: 50px;
+    font-weight: 550;
+    word-spacing: normal;
+    line-height: 40px;
+    font-size: 25px;
+    padding-right: 25px;
+}

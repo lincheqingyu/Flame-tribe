@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.background-container {
+  /* background-image: url("../../assets/images/register.png"); 替换为你的图片路径 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* 设置高度为视窗高度 */
+}
+
+/*# sourceMappingURL=Register.css.map */

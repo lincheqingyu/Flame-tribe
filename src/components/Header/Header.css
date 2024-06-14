@@ -1,0 +1,46 @@
+.header {
+  height: 85px;
+  overflow: hidden;
+}
+.iconPublish svg {
+  height: 46px;
+  width: 38px;
+}
+.header-background {
+  background-image: url('../../assets/images/Rectangle\ 1993.png');
+  overflow: hidden;
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header-content {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-name {
+  display: block;
+  margin-left: 160px;
+  margin-top: 10px;
+  font-size: 40px;
+  letter-spacing: 40px;
+}
+.header-name img {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.header-ul-one {
+  margin-top: 30px;
+  display: flex;
+}
+
+.header-ul-one a {
+  padding-right: 20px;
+  display: flex;
+  height: 80%;
+}

@@ -1,0 +1,37 @@
+.official-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.officialList {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+
+.officialList li {
+  margin-right: 40px;
+  font-size: 20px;
+}
+
+.officialList li a {
+  color: #555657;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.officialActive {
+  color: #fda75f !important;
+}
+
+.officialList a:hover {
+  color: #fda75f;
+  text-decoration-line: underline;
+  text-underline-offset: 0.8em;
+  transition: all 0.5s;
+}

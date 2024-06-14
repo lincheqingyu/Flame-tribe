@@ -1,0 +1,130 @@
+.Lesson {
+    background-color: rgb(242, 242, 242);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    background-color: #fff;
+    border-bottom: 1.5px solid rgb(191, 191, 191);
+
+}
+
+.top span {
+    font-size: 35px;
+    padding-left: 12%;
+    display: flex;
+    align-items: center;
+}
+
+.wrapTop {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.wrapTopCenter {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+    margin-left: 15%;
+}
+
+.wraoTopSpan {
+    font-size: large;
+}
+
+.wrapList {
+    // float: right,
+    display: flex;
+}
+
+.wrapList a {
+    display: flex;
+}
+
+.wrapList li:hover {
+    color: #FDA461;
+    text-decoration-line: underline;
+    text-underline-offset: 0.8em;
+    transition: all 0.5s;
+}
+
+.wrapList li {
+    display: flex;
+    align-items: center;
+    float: left;
+    padding-left: 10px;
+    padding-top: 16px;
+    color: #9EA2AB;
+    font-size: 23px;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.borderActive {
+    color: #FDA461 !important;
+}
+
+.inside {
+    display: flex;
+    margin-top: 3.2% !important;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.insideLeft {
+    width: 45%;
+    height: 225px;
+    border-radius: 20px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.insideLeft img {
+    width: 100%;
+    /* 图片宽度充满容器 */
+    height: 100%;
+    /* 图片高度充满容器 */
+    object-fit: cover;
+    /* 保持图片比例并覆盖整个盒子 */
+    border-radius: 20px;
+    /* 设置图片边角与容器一致 */
+    position: absolute;
+    /* 相对于容器定位 */
+    top: 0;
+    /* 图片上边距为0 */
+    left: 0;
+    /* 图片左边距为0 */
+}
+
+.insideRight {
+    float: right;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleTwo {
+    padding-top: 25px;
+    padding-left: 50px;
+    font-weight: 550;
+    word-spacing: normal;
+    line-height: 40px;
+    font-size: 25px;
+    padding-right: 25px;
+}

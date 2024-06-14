@@ -1,0 +1,11 @@
+.examine {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.examine-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}

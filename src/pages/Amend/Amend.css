@@ -1,0 +1,110 @@
+.amend-all {
+  background-image: url('../../assets/images/忘记密码.png');
+  height: 100vh;
+  overflow-y: hidden;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amend-title {
+  color: #6d7071;
+  font-size: 36px;
+  margin-left: 36%;
+  margin-bottom: 20px;
+  letter-spacing: 10px;
+}
+.phone {
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+.phone input {
+  width: 400px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}
+.code {
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+.code input {
+  width: 250px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}
+.code button {
+  width: 130px;
+  height: 50px;
+  margin-left: 20px;
+  background-color: white;
+  color: #ff8a33;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}
+.password {
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+.password input {
+  width: 400px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+  padding-left: 5%;
+  letter-spacing: 2px;
+}
+.password button {
+  width: 90px;
+  height: 50px;
+  margin-left: 10px;
+  background-color: white;
+  color: #ff8a33;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}
+
+.complete {
+  margin-top: 20px;
+  margin-left: 60px;
+}
+.complete button {
+  width: 400px;
+  height: 50px;
+  background-color: #ff8d69;
+  color: white;
+  font-size: 26px;
+  border: none;
+  letter-spacing: 10px;
+  border-radius: 5px;
+}
+.confirm-password {
+  margin-left: 60px;
+  margin-bottom: 20px;
+}
+
+.confirm-password input {
+  width: 400px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+  padding-left: 5%;
+  letter-spacing: 2px;
+}
+.confirm-password button {
+  width: 90px;
+  height: 50px;
+  margin-left: 10px;
+  background-color: white;
+  color: #ff8a33;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}

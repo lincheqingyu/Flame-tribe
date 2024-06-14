@@ -1,0 +1,68 @@
+.Lesson{
+    background-color: rgb(242,242,242);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.background{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(242,242,242);
+    // margin-bottom: 5.4%;
+}
+.Inside{
+    display: flex;
+    margin-top: 3.2% !important;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.InsideLeft {
+    width: 200px;
+    height: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+a{
+    color:black
+}
+.InsideLeft img {
+    width: 100%;
+    /* 图片宽度充满容器 */
+    height: 100%;
+    /* 图片高度充满容器 */
+    object-fit: cover;
+    /* 保持图片比例并覆盖整个盒子 */
+    border-radius: 20px;
+    /* 设置图片边角与容器一致 */
+    position: relative;
+    /* 相对于容器定位 */
+    top: 0;
+    /* 图片上边距为0 */
+    left: 0;
+    /* 图片左边距为0 */
+}
+
+.InsideRight {
+    float: right;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+   line-height: 100px;
+}
+
+.TitleTwo {
+    padding-top: 25px;
+    padding-left: 50px;
+    font-size: 25px;
+}

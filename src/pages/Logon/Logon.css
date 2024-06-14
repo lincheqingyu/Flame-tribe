@@ -1,0 +1,93 @@
+.logon-all {
+  background-image: url('../../assets/images/注册账号1.png');
+  height: 100vh;
+  overflow-y: hidden;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logon-main {
+  margin-top: 12%;
+}
+.logon-title {
+  color: #6d7071;
+  font-size: 36px;
+  margin-left: 40%;
+  margin-bottom: 10%;
+  letter-spacing: 10px;
+}
+
+.phone input {
+  width: 400px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+  padding-left: 5%;
+  letter-spacing: 2px;
+}
+
+.code input {
+  width: 250px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+  padding-left: 5%;
+  letter-spacing: 2px;
+}
+.code button {
+  width: 130px;
+  height: 50px;
+  margin-left: 20px;
+  background-color: white;
+  color: #ff8a33;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}
+.password1 {
+  margin-left: 60px;
+}
+.password1 input {
+  width: 300px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+  padding-left: 5%;
+  letter-spacing: 2px;
+}
+.password1 button {
+  width: 90px;
+  height: 50px;
+  margin-left: 10px;
+  background-color: white;
+  color: #ff8a33;
+  border: 1px solid #bababa;
+  border-radius: 5px;
+}
+.warn {
+  color: #6d7071;
+  margin-left: 60px;
+  margin-top: 2%;
+}
+.warn span {
+  color: #ff8a33;
+}
+.complete {
+  margin-top: 20px;
+  margin-left: 60px;
+}
+.complete button {
+  width: 400px;
+  height: 50px;
+  background-color: #ff8d69;
+  color: white;
+  font-size: 26px;
+  border: none;
+  letter-spacing: 10px;
+  border-radius: 5px;
+}
