@@ -40,3 +40,43 @@
   display: flex;
   justify-content: space-between;
 }
+.apply-data{
+  margin-left: 9.5px !important;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-input-outlined:hover {
+  border-color: #fda75f;
+  background-color: #ffffff;
+}
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
+}
+.apply-all input, .apply-all .react-datepicker-wrapper {
+  width: 600px;
+  margin-left: 10px;
+  height: 37px;
+  padding-top: 7px;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-picker {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 11px 4px;
+  line-height: 1;
+  list-style: none;
+  width: 600px;
+  height: 37px;
+  padding-top: 7px;
+}
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(253,167,95,0.1), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-picker-outlined:focus,:where(.css-dev-only-do-not-override-m4timi).ant-picker-outlined:focus-within{
+  border-color: #fda75f;
+  box-shadow: rgba(253,167,95,0.1);
+}

@@ -1,14 +1,32 @@
 .data-all {
-  width: 80%;
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  float: right;
-  background-color: white;
-  display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: white;
   border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .data-down {
-  width: 80%;
+  width: 100%;
+}
+
+.data-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6d7071;
+  letter-spacing: 1px;
+  font-size: small;
+  margin-top: 10px;
+}
+
+.zhexian {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

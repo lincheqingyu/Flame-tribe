@@ -1,46 +1,89 @@
-import React, { useState } from 'react'
-import './Logon.css'
+import React, { useState, useEffect } from 'react';
+import './Logon.css';
+import { message } from 'antd';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Logon = () => {
-  // 使用 React 的状态来跟踪输入的值
-  const [phoneNumber, setPhoneNumber] = useState('')
-  const [verificationCode, setVerificationCode] = useState('')
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [verificationCode, setVerificationCode] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [timer, setTimer] = useState(0);
+  const navigate = useNavigate();
 
-  // 处理手机号变化
+  useEffect(() => {
+    let interval;
+    if (timer > 0) {
+      interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+    } else if (timer === 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [timer]);
+
   const handlePhoneNumberChange = (e) => {
-    setPhoneNumber(e.target.value)
-  }
+    setPhoneNumber(e.target.value);
+  };
 
-  // 处理验证码变化
   const handleVerificationCodeChange = (e) => {
-    setVerificationCode(e.target.value)
-  }
+    setVerificationCode(e.target.value);
+  };
 
-  // 处理密码变化
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value)
-  }
+    setPassword(e.target.value);
+  };
 
-  // 处理密码可见/隐藏切换
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword)
-  }
+    setShowPassword(!showPassword);
+  };
 
-  // 处理注册按钮点击
-  const handleRegister = () => {
-    // 在这里可以添加处理注册逻辑，例如向服务器发送注册请求等
-    console.log('手机号:', phoneNumber)
-    console.log('验证码:', verificationCode)
-    console.log('密码:', password)
-    // 添加你的注册逻辑...
+  const handleRegister = async () => {
+    try {
+      const response = await axios.post('https://mock.apipark.cn/m1/4425505-4070744-default/user/add', {
+        phoneNumber,
+        verificationCode,
+        password,
+      });
+      if (response.data.message) {
+        message.success('注册成功！');
+        setPhoneNumber('');
+        setVerificationCode('');
+        setPassword('');
+        navigate('/');
+      } else {
+        message.error('注册失败，请重试！');
+      }
+    } catch (error) {
+      console.error('注册请求失败:', error);
+      message.error('注册失败，请重试！');
+    }
+  };
 
-    // 清空表单数据（可选）
-    setPhoneNumber('')
-    setVerificationCode('')
-    setPassword('')
-  }
+  const handleGetCaptcha = async () => {
+    try {
+      if (!phoneNumber) {
+        message.warning('请输入手机号后再获取验证码！');
+        return;
+      }
+      const response = await axios.post('https://mock.apipark.cn/m1/4425505-4070744-default/user/send', {
+        phoneNumber,
+      });
+      if (response.data.code) {
+        message.success('验证码已发送！');
+        console.log(response.data.code);
+        setTimer(60);
+      } else {
+        message.error('获取验证码失败，请重试！');
+      }
+    } catch (error) {
+      console.error('获取验证码请求失败:', error);
+      message.error('获取验证码失败，请重试！');
+    }
+    console.log("已发送请求");
+  };
 
   return (
     <div className='logon-all'>
@@ -49,8 +92,7 @@ const Logon = () => {
           <div className='logon-main'>
             <div className='logon-title'>
               账号注册
-            </div >
-            {/* 输入手机号 */}
+            </div>
             <div className='phone'>
               <input
                 type='text'
@@ -59,8 +101,6 @@ const Logon = () => {
                 onChange={handlePhoneNumberChange}
               />
             </div>
-
-            {/* 输入验证码 */}
             <div className='code'>
               <input
                 type='text'
@@ -68,9 +108,9 @@ const Logon = () => {
                 value={verificationCode}
                 onChange={handleVerificationCodeChange}
               />
-              {/* 获取验证码 */}
-              <button>获取验证码</button>
-
+              <button onClick={handleGetCaptcha} disabled={timer > 0}>
+                {timer > 0 ? `${timer}秒` : '获取验证码'}
+              </button>
             </div>
             <div className='password1'>
               <input
@@ -79,30 +119,21 @@ const Logon = () => {
                 value={password}
                 onChange={handlePasswordChange}
               />
-
-              {/* 密码可见/隐藏切换按钮 */}
               <button onClick={togglePasswordVisibility}>
                 {showPassword ? '👁️' : '隐藏'}
               </button>
-
             </div>
-
-            {/* 输入密码 */}
             <div className='warn'>
               注册表示您已认真阅读并同意<span>烽火部落</span>的<span>《使用协议》</span>
             </div>
-
-            {/* 完成注册按钮 */}
             <div className='complete'>
               <button onClick={handleRegister}>完成注册</button>
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Logon
+export default Logon;
