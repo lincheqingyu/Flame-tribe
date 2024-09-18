@@ -6,6 +6,7 @@ import { Button, Drawer, Image } from 'antd';
 import './News.scss'
 import App from '../../../components/comments/App'; // 确保导入 App 组件
 const News = () => {
+    // 评论弹窗
     const [open, setOpen] = useState(false);
     const showDrawer = () => {
         setOpen(true);
@@ -13,6 +14,7 @@ const News = () => {
     const onClose = () => {
         setOpen(false);
     };
+    // 点赞数量
     const [likes, setLikes] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
 

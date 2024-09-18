@@ -1,41 +1,60 @@
-import React, { useState } from 'react'
-import First from "../../components/First/First"
-import './Publish.css'
-import { PlusOutlined } from '@ant-design/icons'
-import { Image, Upload, Input } from 'antd'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import First from "../../components/First/First";
+import './Publish.css';
+import { PlusOutlined } from '@ant-design/icons';
+import { Image, Upload, Input, message } from 'antd';
+
 const getBase64 = (file) =>
   new Promise((resolve, reject) => {
-    // const reader = new FileReader();
-    // reader.readAsDataURL(file);
-    // reader.onload = () => resolve(reader.result);
-    // reader.onerror = (error) => reject(error);
-  })
-const Publish = () => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
 
-  const [topic, setTopic] = useState('')
-  const [selectedTag, setSelectedTag] = useState('#学习讨论') // 新增状态，默认选中
-  const [content, setContent] = useState('')
-  const [image, setImage] = useState(null)
-
-  const handleTopicChange = (event) => {
-    setTopic(event.target.value)
-  }
+const Publish = ({ addPost }) => {
+  const [topic, setTopic] = useState('');
+  const [selectedTag, setSelectedTag] = useState('#学习讨论');
+  const [content, setContent] = useState('');
+  const [fileList, setFileList] = useState([]);
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewImage, setPreviewImage] = useState('');
+  const navigate = useNavigate();
 
   const handleContentChange = (event) => {
-    setContent(event.target.value)
-  }
+    setContent(event.target.value);
+  };
 
-  const [previewOpen, setPreviewOpen] = useState(false)
-  const [previewImage, setPreviewImage] = useState('')
-  const [fileList, setFileList] = useState([])
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj)
+      file.preview = await getBase64(file.originFileObj);
     }
-    setPreviewImage(file.url || file.preview)
-    setPreviewOpen(true)
-  }
-  const handleChange = ({ fileList: newFileList }) => setFileList(newFileList)
+    setPreviewImage(file.url || file.preview);
+    setPreviewOpen(true);
+  };
+
+  const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
+
+  const handleTagClick = (tag) => {
+    setSelectedTag(tag);
+  };
+
+  const handlePublish = () => {
+    if (!topic || !content) {
+      message.error('标题和内容不能为空');
+      return;
+    }
+    const newPost = { topic, content, selectedTag, images: fileList.map(file => file.url || file.preview) };
+    addPost(newPost);
+    setTopic('');
+    setContent('');
+    setFileList([]);
+    setSelectedTag('#学习讨论');
+    message.success('发帖成功');
+    navigate('/contact/attention');
+  };
+
   const uploadButton = (
     <button
       style={{
@@ -45,25 +64,11 @@ const Publish = () => {
       type="button"
     >
       <PlusOutlined />
-      <div
-        style={{
-          marginTop: 8,
-        }}
-      >
+      <div style={{ marginTop: 8 }}>
         点击上传
       </div>
     </button>
-  )
-
-  const handleTagClick = (tag) => {
-    setSelectedTag(tag)
-  }
-
-
-  const handlePublish = () => {
-    console.log('发布内容:', { topic, content, image, selectedTag })
-    // 在这里执行一键发帖的逻辑，包括发送数据到服务器等
-  }
+  );
 
   return (
     <div className='publish-all'>
@@ -77,7 +82,7 @@ const Publish = () => {
         <div className='publish-container'>
           <div className='publish-header'>
             <span className='publish-title'>主题：</span>
-            <Input placeholder="请输入标题" />
+            <Input value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="请输入标题" />
           </div>
           <div className='publish-content'>
             <textarea
@@ -86,10 +91,8 @@ const Publish = () => {
               onChange={handleContentChange}
             ></textarea>
           </div>
-          {/* 上传图片 */}
           <div className='file-upload-container'>
             <Upload
-              action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
               listType="picture-card"
               fileList={fileList}
               onPreview={handlePreview}
@@ -112,9 +115,7 @@ const Publish = () => {
             )}
           </div>
           <div className="publish-tags">
-            <span>
-              添加标签：
-            </span>
+            <span>添加标签：</span>
             <span
               className={`publish-tag ${selectedTag === '#学习讨论' ? 'selected' : ''}`}
               onClick={() => handleTagClick('#学习讨论')}
@@ -128,21 +129,10 @@ const Publish = () => {
               #竞赛分享
             </span>
           </div>
-
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
 export default Publish;
-
-
-
-
-
-
-
-
-

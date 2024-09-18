@@ -14,7 +14,7 @@ import { request } from "@/utils";
 export function loginAPI(formData) {
     //发送网络请求
     return request({
-        url: '/login',
+        url: '/user/login',
         method: 'POST',//请求方式
         data: formData
     })
@@ -24,8 +24,36 @@ export function loginAPI(formData) {
 export function getProfileAPI() {
     //发送网络请求
     return request({
-        url: '/login',
+        //url: '/login',
+        url: '/personal',
         method: 'GET',//请求方式
+    })
+}
+
+
+// 3.更新用户信息
+export function updateProfileAPI(formData) {
+    //发送网络请求
+    return request({
+        url: '/user/update',
+        method: 'POST',//请求方式
+        data: formData
+    })
+}
+
+// 4.注册
+export function registerAPI() {
+    return request({
+        url: '/user/add',
+        method: 'POST',
+    })
+}
+
+// 5.发送验证码
+export function sendVerificationCodeAPI(){
+    return request({
+        url: '/user/send',
+        method: 'POST',
     })
 }
 

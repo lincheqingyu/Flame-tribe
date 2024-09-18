@@ -159,3 +159,12 @@
   // border-width: 20px;
   border: 2px solid #716E6D
 }
+:where(.css-dev-only-do-not-override-m4timi).ant-btn-primary {
+  color: #fff;
+  background: #FF9110;
+  box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+  color: #fff;
+  background: #fca949;
+}

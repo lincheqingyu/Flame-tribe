@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react'
 import './App.scss'
 import avatar from '../../assets/images/personalheadlike.png'
@@ -7,6 +6,8 @@ import classNames from 'classnames'
 import { v4 as uuidV4 } from 'uuid'
 import dayjs from 'dayjs'
 import axios from 'axios'
+import { message } from 'antd' // 引入 Ant Design 的 message 组件
+import 'antd/dist/reset.css'; // 引入 Ant Design 的样式
 
 // 当前登录用户信息
 const user = {
@@ -123,6 +124,10 @@ const App = () => {
   const [content, setContent] = useState('')
   const inputRef = useRef(null)
   const handlPublish = () => {
+    if (content.trim() === '') {
+      message.warning('评论内容不能为空') // 显示提示消息
+      return
+    }
     setCommentList([
       ...commentList,
       {
@@ -151,7 +156,7 @@ const App = () => {
           <li className="nav-title">
             <span className="nav-title-text">评论</span>
             {/* 评论数量 */}
-            <span className="total-reply">{10}</span>
+            <span className="total-reply">{commentList.length}</span>
           </li>
           <li className="nav-sort">
             {/* 高亮类名： active */}
@@ -193,7 +198,7 @@ const App = () => {
         {/* 评论列表 */}
         <div className="reply-list">
           {/* 评论项 */}
-          {commentList.map(item => <Item key={item.id} item={item} onDel={handleDel} />)}
+          {commentList.map(item => <Item key={item.rpid} item={item} onDel={handleDel} />)}
         </div>
       </div>
     </div>

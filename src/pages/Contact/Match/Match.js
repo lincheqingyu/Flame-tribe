@@ -3,8 +3,19 @@ import "./Match.scss"
 import Icon, { LikeOutlined, FormOutlined, HeartOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Image } from "antd";
+import { Button, Drawer, Image } from 'antd';
+import App from '../../../components/comments/App'; // 确保导入 App 组件
+
 const Match = () => {
+    // 评论弹窗
+    const [open, setOpen] = useState(false);
+    const showDrawer = () => {
+        setOpen(true);
+    };
+    const onClose = () => {
+        setOpen(false);
+    };
+
     // 点赞
     const [likes, setLikes] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
@@ -12,7 +23,6 @@ const Match = () => {
     // 处理点击事件的函数
     const handleLikeClick = () => {
         if (isLiked) {
-            let likes = 100
             // 如果已经点赞过，则取消赞，点赞数量-1，标记为未点赞
             setLikes(likes - 1);
             setIsLiked(false);
@@ -22,12 +32,12 @@ const Match = () => {
             setIsLiked(true);
         }
     };
+
     return (
         <>
             {/* <div className="wrap"> */}
             <div className="rightMainBox">
                 <div className="reply-wrap">
-
                     {/* 评论项 */}
                     <div className="reply-item">
                         {/* 头像 */}
@@ -74,7 +84,14 @@ const Match = () => {
                                         <span className="delete-btn">点赞数:{likes}</span>
                                     </span>
 
-                                    <span className="delete-btn"><FormOutlined />评论数:{100}</span>
+                                    <span className="delete-btn"><FormOutlined />
+                                        <Button type="primary" onClick={showDrawer} className="comment-btn">
+                                            点击评论
+                                        </Button>
+                                        <Drawer title="请开始你的评论~" onClose={onClose} open={open} className="comment-drawer">
+                                            <App />
+                                        </Drawer>
+                                    </span>
                                     <span className="delete-btn">
                                         <HeartOutlined /> 收藏:{100}
                                     </span>
@@ -138,7 +155,13 @@ const Match = () => {
                                         <span className="delete-btn">点赞数:{likes}</span>
                                     </span>
 
-                                    <span className="delete-btn"><FormOutlined />评论数:{100}</span>
+                                    <span className="delete-btn"><FormOutlined />
+                                        <Button type="primary" onClick={showDrawer} className="comment-btn">
+                                            点击评论
+                                        </Button>
+                                        <Drawer title="请开始你的评论~" onClose={onClose} open={open} className="comment-drawer">
+                                            <App></App>
+                                        </Drawer></span>
                                     <span className="delete-btn">
                                         <HeartOutlined /> 收藏:{100}
                                     </span>
